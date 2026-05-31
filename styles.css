@@ -1,0 +1,73 @@
+body {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #f7ebe1;
+  margin: 0;
+  padding: 20px;
+  
+  /* Central Perk cozy tint overlay + background image link */
+  background-image: linear-gradient(rgba(43, 29, 18, 0.85), rgba(43, 29, 18, 0.85)), 
+                    url('images/central-perk.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+h2 { font-size: 2rem; color: #f1c40f; margin-top: 0; }
+
+#start-btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #4b7754; /* Central Perk green */
+  color: white;
+  border: 2px solid #f1c40f;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+#start-btn:hover {
+  background-color: #3b5e42;
+  transform: scale(1.05);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  grid-gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.hole {
+  width: 180px;
+  height: 180px;
+  background-color: #1e130c;
+  border: 4px solid #f1c40f;
+  border-radius: 50%; /* Makes the frame a perfect circle coffee-cup style */
+  position: relative;
+  overflow: hidden; /* Crucial: Keeps Janice hidden when she is down */
+}
+
+.janice {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  position: absolute;
+  left: 0;
+  top: 100%; 
+  transition: top 0.12s ease-in-out; 
+  
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: auto; 
+}
+
+
+.janice.up {
+  top: 0; 
+}
